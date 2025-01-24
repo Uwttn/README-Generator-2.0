@@ -1,5 +1,5 @@
 {
-  "name": "my-electron-app",
+  "name": "readme-generator",
   "version": "1.0.0",
   "description": "Hello World!",
   "main": "main.js",
@@ -7,7 +7,8 @@
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "publish": "electron-forge publish"
+    "publish": "electron-forge publish",
+    "build": "electron-builder"
   },
   "repository": {
     "type": "git",
@@ -28,12 +29,33 @@
     "@electron-forge/plugin-fuses": "^7.6.1",
     "@electron-forge/publisher-github": "^7.6.1",
     "@electron/fuses": "^1.8.0",
-    "electron": "^34.0.1"
+    "electron": "^34.0.1",
+    "electron-builder": "^25.1.8"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
     "electron-squirrel-startup": "^1.0.1",
-    "inquirer": "^12.3.2",
-    "update-electron-app": "^3.1.0"
+    "inquirer": "^12.3.2"
+  },
+  "build": {
+    "icon": "src/assets/icon.png",
+    "appId": "com.yourapp.id",
+    "productName": "README Generator",
+    "files": [
+      "main.js",
+      "dist/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg",
+      "hardenedRuntime": true,
+      "entitlements": "entitlements.mac.plist",
+      "entitlementsInherit": "entitlements.mac.plist",
+      "gatekeeperAssess": false
+    }
   }
 }
