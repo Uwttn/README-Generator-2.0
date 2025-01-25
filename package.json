@@ -43,9 +43,9 @@
     "productName": "README Generator",
     "files": [
       "main.js",
+      "src/**/*",
       "dist/**/*",
-      "node_modules/**/*",
-      "package.json"
+      "node_modules/**/*"
     ],
     "win": {
       "target": "nsis"
