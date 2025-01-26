@@ -6,16 +6,43 @@
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
     <title>README Generator</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Hello from Electron renderer!</h1>
-    <p>👋</p>
-    <p id="info"></p>
+    <!-- The Beginning of the Application -->
+
+    <div class="container">
+      <h1>Hello 👋 Welcome to README Generator</h1>
+      <button>Create README</button>
+    </div>
+
+    <!-- Questions -->
+    <div class="hidden-content">
+      <h1>What is the title of your project?</h1>
+      <input placeholder="Answer" />
+      <button>Next</button>
+    </div>
+    <div class="hidden-content">
+      <h1>What is the description of your project?</h1>
+      <input placeholder="Answer" />
+      <button>Next</button>
+    </div>
+    <div class="hidden-content">
+      <h1>Choose your license.</h1>
+      <select>
+        <option value="MIT">MIT</option>
+        <option value="Apache">Apache</option>
+        <option value="GPL">GPL</option>
+      </select>
+      <button>Next</button>
+    </div>
+    <div class="hidden-content">
+      <h1>Who is the author</h1>
+      <input placeholder="Answer" />
+      <button>Next</button>
+    </div>
+
+    <script src="./script.js"></script>
   </body>
-  <script src="./renderer.js"></script>
 </html>
