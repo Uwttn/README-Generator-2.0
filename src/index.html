@@ -10,39 +10,145 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- The Beginning of the Application -->
+    <!-- Landing Page -->
+    <div id="intro">
+      <h1>README Generator</h1>
+      <button id="create">Create README</button>
+    </div>
+    <br />
 
-    <div class="container">
-      <h1>Hello 👋 Welcome to README Generator</h1>
-      <button>Create README</button>
-    </div>
+    <form id="readmeForm">
+      <!-- Project Title -->
+      <div class="hidden">
+        <label for="title">What is the title of the project?</label>
+        <br />
+        <input type="text" id="title" name="title" required />
+        <br />
+        <button class="next">Next</button>
+      </div>
+      <br />
 
-    <!-- Questions -->
-    <div class="hidden-content">
-      <h1>What is the title of your project?</h1>
-      <input placeholder="Answer" />
-      <button>Next</button>
-    </div>
-    <div class="hidden-content">
-      <h1>What is the description of your project?</h1>
-      <input placeholder="Answer" />
-      <button>Next</button>
-    </div>
-    <div class="hidden-content">
-      <h1>Choose your license.</h1>
-      <select>
-        <option value="MIT">MIT</option>
-        <option value="Apache">Apache</option>
-        <option value="GPL">GPL</option>
-      </select>
-      <button>Next</button>
-    </div>
-    <div class="hidden-content">
-      <h1>Who is the author</h1>
-      <input placeholder="Answer" />
-      <button>Next</button>
-    </div>
+      <!-- Description -->
+      <div class="hidden">
+        <label for="description">What is your description?</label>
+        <br />
+        <textarea id="description" name="description" required></textarea>
+        <br />
+        <button class="next">Next</button>
+      </div>
+      <br />
 
-    <script src="./script.js"></script>
+      <!-- License -->
+      <div class="hidden">
+        <label for="license">Choose your license:</label>
+        <br />
+        <select id="license" name="license" required>
+          <option value="MIT">MIT</option>
+          <option value="Apache">Apache</option>
+          <option value="GPL">GPL</option>
+        </select>
+        <br />
+        <button class="next">Next</button>
+      </div>
+      <br />
+
+      <!-- Author -->
+      <div class="hidden">
+        <label for="author">Who is the author?</label>
+        <br />
+        <input type="text" id="author" name="author" required />
+        <br />
+        <button class="next">Next</button>
+      </div>
+      <br />
+
+      <!-- Languages Used -->
+      <div class="hidden">
+        <label for="languages">What languages did you use?</label>
+        <br />
+        <div id="languages">
+          <input
+            type="checkbox"
+            id="htmlcss"
+            name="languages"
+            value="HTML/CSS"
+          />
+          <label for="htmlcss">HTML/CSS</label>
+
+          <input
+            type="checkbox"
+            id="javascript"
+            name="languages"
+            value="JavaScript"
+          />
+          <label for="javascript">JavaScript</label>
+
+          <input type="checkbox" id="python" name="languages" value="Python" />
+          <label for="python">Python</label>
+
+          <input type="checkbox" id="java" name="languages" value="Java" />
+          <label for="java">Java</label>
+
+          <input type="checkbox" id="cpp" name="languages" value="C++" />
+          <label for="cpp">C++</label>
+
+          <input type="checkbox" id="php" name="languages" value="PHP" />
+          <label for="php">PHP</label>
+
+          <input
+            type="checkbox"
+            id="typescript"
+            name="languages"
+            value="TypeScript"
+          />
+          <label for="typescript">TypeScript</label>
+
+          <input type="checkbox" id="swift" name="languages" value="Swift" />
+          <label for="swift">Swift</label>
+
+          <input type="checkbox" id="ruby" name="languages" value="Ruby" />
+          <label for="ruby">Ruby</label>
+
+          <input type="checkbox" id="go" name="languages" value="Go" />
+          <label for="go">Go</label>
+          <button class="next">Next</button>
+        </div>
+      </div>
+      <br />
+
+      <!-- GitHub Username -->
+      <div class="hidden">
+        <label for="github">What is your GitHub username?</label>
+        <br />
+        <input type="text" id="github" name="github" required />
+        <br /><button class="next">Next</button>
+      </div>
+      <br />
+
+      <!-- LinkedIn Username -->
+      <div class="hidden">
+        <label for="linkedin">What is your LinkedIn username?</label>
+        <br />
+        <input type="text" id="linkedin" name="linkedin" required />
+        <br />
+        <button class="next">Next</button>
+      </div>
+      <br />
+
+      <!-- Email -->
+      <div class="hidden">
+        <label for="email">What is your email?</label>
+        <br />
+        <input type="email" id="email" name="email" required />
+        <br />
+        <button class="next">Next</button>
+      </div>
+      <br />
+
+      <!-- Submit Button -->
+      <button type="submit">Generate README</button>
+    </form>
+    <br />
+    <script src="./renderer.js"></script>
   </body>
 </html>
